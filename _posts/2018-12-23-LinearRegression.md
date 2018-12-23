@@ -49,6 +49,6 @@ Here is an image:
 
 Mathematics:
 
-&& z=x+y &&
+$$ z=x+y $$
 
-Inline putting && z=x+y &&
+Inline putting $$ z=x+y $$
