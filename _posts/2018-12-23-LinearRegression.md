@@ -15,7 +15,46 @@ mathjax: "true"
 
 ### H3 Heading
 
-This is demo text
+In this example, it will be presented how to use Linear Regression model for the purpose of analyzing the Medical Costs Data. The data is obtained from: https://www.kaggle.com/mirichoi0218/insurance
+
+### First, let's import required libraries
+
+```python
+    import numpy as np
+    import pandas as pd
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+```
+
+### Next step is to load the dataset
+
+```python
+    df = pd.read_csv("../input/insurance.csv")
+```
+
+### The most important thing is to understand the data we have. Let's see some basic information about them.
+
+```python
+    df.head()
+```
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/df.head" alt="First five rows of the dataset">
+
+```python
+    df.info()
+```
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/df.info alt="Basic information about all columns">
+
+```python
+    df.describe()
+```
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/df.describe alt="Basic information about all columns">
+
+```python
+    df['region'].value_counts()
+```
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/df.region alt="Count a number of values for each region">
+
+
 
 And *italic text*
 
@@ -33,13 +72,7 @@ A numbered list:
 2. seconds
 
 
-Python code block:
-```python
-    import numpy as np
-    import pandas as pd
-    import seaborn as sns
-    import matplotlib.pyplot as plt
-```
+
 
 Here is a code 'x+y=c'
 
