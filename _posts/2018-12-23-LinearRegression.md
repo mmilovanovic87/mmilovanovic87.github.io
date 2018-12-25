@@ -42,17 +42,17 @@ In this example, it will be presented how to use Linear Regression model for the
 ```python
     df.info()
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfInfo.png alt="Basic information about all columns">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfInfo.png" alt="Basic information about all columns">
 
 ```python
     df.describe()
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfDescribe.png alt="Basic information about all columns">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfDescribe.png" alt="Basic information about all columns">
 
 ```python
     df['region'].value_counts()
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfRegion.png alt="Count a number of values for each region">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfRegion.png" alt="Count a number of values for each region">
 
 
 
