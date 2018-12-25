@@ -37,22 +37,22 @@ In this example, it will be presented how to use Linear Regression model for the
 ```python
     df.head()
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/df.head" alt="First five rows of the dataset">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfHead.png" alt="First five rows of the dataset">
 
 ```python
     df.info()
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/df.info alt="Basic information about all columns">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfInfo.png alt="Basic information about all columns">
 
 ```python
     df.describe()
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/df.describe alt="Basic information about all columns">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfDescribe.png alt="Basic information about all columns">
 
 ```python
     df['region'].value_counts()
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/df.region alt="Count a number of values for each region">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfRegion.png alt="Count a number of values for each region">
 
 
 
