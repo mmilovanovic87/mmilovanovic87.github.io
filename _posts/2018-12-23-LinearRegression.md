@@ -9,12 +9,6 @@ mathjax: "true"
 
 ---
 
-# H1 Heading
-
-## H2 Heading
-
-### H3 Heading
-
 In this example, it will be presented how to use Linear Regression model for the purpose of analyzing the Medical Costs Data. The data is obtained from: https://www.kaggle.com/mirichoi0218/insurance
 
 ### First, let's import required libraries
@@ -55,6 +49,17 @@ In this example, it will be presented how to use Linear Regression model for the
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfRegion.png" alt="Count a number of values for each region">
 
 
+### Next part is to graphically represent our numerical data. We will plot pairplot graph from the seaborn library.
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/PairPlot.png" alt="Pair plot figure of all data">
+
+
+### The variable of interest is "charges". We want to predict what would be medical costs for specific individual, based on other given information. Let's see distribution of data for "charges". From the figure bellow we can conclude that "charges" parameter is close to normal distribution of data. It is a good thing!
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/distplot.png" alt="Distribution of charges column">
+
+
+
 
 And *italic text*
 
@@ -78,7 +83,7 @@ Here is a code 'x+y=c'
 
 Here is an image:
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/PairPlot.png" alt="Pair plot figure of all data">
+
 
 Mathematics:
 
