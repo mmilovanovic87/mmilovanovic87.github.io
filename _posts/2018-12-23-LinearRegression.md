@@ -27,14 +27,14 @@ This will be my first announcement. For the beginning, let's see how to use Pyth
 
 *  The most important thing at the beginning is to understand the data. There is no point in building machine learning models if we do not understand what are we looking for in our data and what are our expectations. Let's see some basic information about data set.
 
-    + What categories are included in our data set?
++ What categories are included in our data set?
 
 ```python
     df.columns
 ```
   <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfColumns.png" alt="Distribution of charges column">
 
-    + We will print first five rows of our DataFrame.
++ We will print first five rows of our DataFrame.
 
 ```python
     df.head()
@@ -43,21 +43,21 @@ This will be my first announcement. For the beginning, let's see how to use Pyth
 
   As we can see, 7 categories are included through the data.
 
-    + Next, number of entries for each category and column types are presented. Four numerical and three object categories are incldued.
++ Next, number of entries for each category and column types are presented. Four numerical and three object categories are incldued.
 
 ```python
     df.info()
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfInfo.png" alt="Basic information about all columns">
 
-    + Describe function will show  characteristics of all numerical categories.
++ Describe function will show  characteristics of all numerical categories.
 
 ```python
     df.describe()
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfDescribe.png" alt="Basic information about all columns">
 
-    + As it is said, three object categories are included. They are categorical features, and the easiest way to analyze these data is to a number of impressions of each possible outcome. For example, region category could be summed as:
++ As it is said, three object categories are included. They are categorical features, and the easiest way to analyze these data is to a number of impressions of each possible outcome. For example, region category could be summed as:
 
 ```python
     df['region'].value_counts()
@@ -112,14 +112,14 @@ Now we can use all 7 categories for prediction purposes.
 ```python
     from sklearn.model_selection import train_test_split
 ```
-    + Five dataframe categories will be used as inputs of the model. We want to fit our model according to "charges" category, so output variable Y will be "charges" of course.
++ Five dataframe categories will be used as inputs of the model. We want to fit our model according to "charges" category, so output variable Y will be "charges" of course.
 
 ```python
     X = df[['age', 'sex_label', 'bmi', 'children', 'smoker_label', 'region_label']]
     y = df['charges']
 ```
 
-    + Usage of *train_test_split* function
++ Usage of *train_test_split* function
 
 ```python
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4)
@@ -153,7 +153,7 @@ Now we can use all 7 categories for prediction purposes.
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/PredictedValues.png" alt="Predicted values">
 
-      + Graphical comparison of expected values (y_test) and obtained predicted values (predictions).
++ Graphical comparison of expected values (y_test) and obtained predicted values (predictions).
 
 ```python
     plt.scatter(y_test, predictions)
@@ -161,14 +161,14 @@ Now we can use all 7 categories for prediction purposes.
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/scatter.png" alt="Scatter graph">
 
-      + Also, let's see an error distribution graph of our predictions. Very close to normally distributed data.
++ Also, let's see an error distribution graph of our predictions. Very close to normally distributed data.
 
 ```python
     sns.distplot((y_test-predictions), bins=50)
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/distplot2.png" alt="Distplot 2">
 
-      + Finally, let's print mean absolute error (MAE) and mean squared error (MSE) for our predictions
++ Finally, let's print mean absolute error (MAE) and mean squared error (MSE) for our predictions
 
 ```python
     from sklearn import metrics
