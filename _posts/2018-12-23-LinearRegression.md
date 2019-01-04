@@ -120,7 +120,7 @@ Procedure for importing and fitting the model.
     lm = LinearRegression()
     lm.fit(X_train,y_train)
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/LRmodel" alt="Distribution of charges column">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/LRmodel.png" alt="Distribution of charges column">
 
 
 
@@ -134,7 +134,7 @@ Quit smoking! We can observe that smoker_label category has the highest influenc
     coeff_df = pd.DataFrame(lm.coef_,X.columns,columns=['Coefficient'])
     print(coeff_df)
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/coeff" alt="Distribution of charges column">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/coeff.png" alt="Distribution of charges column">
 
 Final part is to use fitted model for predicting new values (based on prepared X_test array)
 
@@ -142,7 +142,7 @@ Final part is to use fitted model for predicting new values (based on prepared X
     predictions = lm.predict(X_test)
     print("Predicted medical costs values:", predictions)
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/PredictedValues" alt="Distribution of charges column">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/PredictedValues.png" alt="Distribution of charges column">
 
 Graphical comparison of expected values (y_test) and predicted values (predictions).
 
@@ -150,14 +150,14 @@ Graphical comparison of expected values (y_test) and predicted values (predictio
     plt.scatter(y_test, predictions)
 ```
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/scatter" alt="Distribution of charges column">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/scatter.png" alt="Distribution of charges column">
 
 Also, let's see error distribution graph of our predictions. Very close to normally distributed data.
 
 ```python
     sns.distplot((y_test-predictions), bins=50)
 ```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/distplot2" alt="Distribution of charges column">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/distplot2.png" alt="Distribution of charges column">
 
 Finally, let's print MAE and MSE erorrs for entire test data.
 
@@ -167,4 +167,4 @@ Finally, let's print MAE and MSE erorrs for entire test data.
     print(metrics.mean_squared_error(y_test, predictions))
 ```
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/metrics" alt="Distribution of charges column">
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/metrics.png" alt="Distribution of charges column">
