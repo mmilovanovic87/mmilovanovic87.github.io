@@ -2,8 +2,6 @@
 title: "Basics of Linear Regression, Case Study 1: Medical Costs Analysis"
 date: 2018-12-23
 tags: [machine learning, data science, linear regression, python]
-header:
-  image: "/images/LinearRegression/LinReg.png"
 excerpt: "Machine Learning, Linear Regression, Data Science"
 mathjax: "true"
 
