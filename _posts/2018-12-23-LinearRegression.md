@@ -1,14 +1,14 @@
 ---
 title: "Basics of Linear Regression, Case Study 1: Medical Costs Analysis"
 date: 2018-12-23
-tages: [machine learning, data science, linear regression, python]
+tags: [machine learning, data science, linear regression, python]
 header:
   image: "/images/LinearRegression/LinReg.png"
 excerpt: "Machine Learning, Linear Regression, Data Science"
 mathjax: "true"
 
 ---
-This will be my first announcement. For the beginning, let's see how to use Python and Linear Regression model to predict data. In this example, it will be presented how to simply analyze a raw data and to use regression model for the purpose of analyzing the Medical Costs Data. The data is obtained from: *https://www.kaggle.com/mirichoi0218/insurance*.
+This will be my first announcement. For the beginning, let's see how to use Python and Linear Regression model to predict data. In this example, it will be presented how to simply analyze a raw data and to use regression model for the purpose of analyzing the Medical Costs Data. The data is obtained from: [link](https://www.kaggle.com/mirichoi0218/insurance).
 
 * First, let's import required libraries for further work.
 
