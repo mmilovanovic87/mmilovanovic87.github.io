@@ -6,4 +6,3 @@ header:
 ---
 
 Data Science Enthusiast
-Machine Learning Lover
