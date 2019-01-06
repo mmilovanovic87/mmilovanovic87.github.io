@@ -9,13 +9,13 @@ mathjax: "true"
 This will be my first announcement. For the beginning, let's see how to use Python and to build a simple Linear Regression model to predict some data. In this example, it will be presented how to simply analyze a raw data and to use regression model for the purpose of analyzing the Medical Costs Data. The data is obtained from [link](https://www.kaggle.com/mirichoi0218/insurance).
 
 The task will be to do all necessary steps which are required for successful implementation of one  specific machine learning model:
-    + to load the data
-    + to learn from the data
-    + to analyze information and and graphically represent numerical categories
-    + to convert object categories to label (dummy) variables
-    + to import and fit the Linear Regression models
-    + to predict values using the fitted model
-    + and finally, to measure accuracy of the model.
++ to load the data
++ to learn from the data
++ to analyze information and and graphically represent numerical categories
++ to convert object categories to label (dummy) variables
++ to import and fit the Linear Regression models
++ to predict values using the fitted model
++ and finally, to measure accuracy of the model.
 
 * First, let's import required libraries for further work.
 
