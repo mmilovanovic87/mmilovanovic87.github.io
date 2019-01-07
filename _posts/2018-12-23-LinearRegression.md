@@ -8,7 +8,7 @@ mathjax: "true"
 ---
 This will be my first announcement. For the beginning, let's see how to use Python and to build a simple Linear Regression model to predict some data. In this example, it will be presented how to simply analyze a raw data and to use regression model for the purpose of analyzing the Medical Costs Data. The data is obtained from [link](https://www.kaggle.com/mirichoi0218/insurance).
 
-The task will be to perform all the necessary steps which are required for successful implementation of a machine learning model: to load the data, to learn from the data, to analyze information and and graphically represent numerical categories, to convert object categories to label (dummy) variables, to import and fit the Linear Regression models, to predict values using the fitted model, and finally, to measure accuracy of the model.
+The task will be to perform all the necessary steps which are required for successful implementation of a machine learning model: to load the data, to learn from the data, to analyze information and graphically represent numerical categories, to convert object categories to label (dummy) variables, to import and fit the Linear Regression models, to predict values using the fitted model, and finally, to measure accuracy of the model.
 
 * First, let's import required libraries for further work.
 
@@ -93,7 +93,7 @@ From the figure above we can conclude that the distribution of "charges" is clos
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/heatmap.png" alt="Heatmap">
 
-And we have found 1st Interesting fact: Children category (Number of children covered by health insurance) has the lowest correlation with "charges". Personally, I thought it would be vice versa.
+And we have found 1st interesting fact: Children category (Number of children covered by health insurance) has the lowest correlation with "charges". Personally, I thought it would be vice versa.
 
 * We have three non numerical categories: sex, smoker and region. We want to use them too for the prediction purposes. So the next step is to convert these variables to numerical dummy variables (label values), by which, each string inside a category will be presented with one label (integer).
 
