@@ -126,7 +126,7 @@ What next? To transform categorical variables sex, smoker and region by using On
     df = df.drop(['sex','smoker','region'], axis=1)
 ```
 
-In the table below we can recognize our new (One hot encoding) columns (which represent converted object categories)
+In the table below we can easily recognize our new (One hot encoding) columns.
 
 ```python
     df.head(10)
