@@ -101,15 +101,15 @@ One hot encoding is the procedure of transforming categorical variables as binar
 What next? To transform categorical variables sex, smoker and region by using One hot encoding, and add obtained categories to our dataframe.
 
 ```python
+    sex_dummy = pd.get_dummies(df['sex'])
+    smoker_dummy = pd.get_dummies(df['smoker'])
+    region_dummy = pd.get_dummies(df['region'])
 
-      sex_dummy = pd.get_dummies(df['sex'])
-      smoker_dummy = pd.get_dummies(df['smoker'])
-      region_dummy = pd.get_dummies(df['region'])
+    df = pd.concat([df,sex_dummy,smoker_dummy,
+                    region_dummy], axis=1)
 
-      df = pd.concat([df,sex_dummy,smoker_dummy,region_dummy], axis=1)
-
-      df.rename(columns={'no': 'non-smoker', 'yes': 'nicotian'}, inplace=True)
-
+    df.rename(columns={'no': 'non-smoker',
+              'yes': 'nicotian'}, inplace=True)
 ```
 
 * We have successfully transformed our categorical variables, so we can remove these original categories from our DataFrame.
@@ -171,7 +171,7 @@ Now we can use all 7 initial categories for prediction purposes.
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/coeff.png" alt="Coefficients of LR model">
 
-* ###Interesting fact 2: Quit smoking! We can observe that the smoker_label category (from the table above) has the highest influence on medical costs calculations. It has stronger influence than all other analyzed parameters TOGETHER.###
+* Interesting fact 2: Quit smoking! We can observe that the nicotian category (from the table above) has the highest influence on medical costs calculations. On the contrary, non-smoker category possess the largest negative influence on medical costs. Do you need any more concrete reason what are the benefits of being non-smoker? Smoker/non-smoker categories possess stronger influences than all other analyzed parameters TOGETHER.
 
 * Final part of this short case study is to test the trained model for predicting a new "charges" values (by using prepared X_test data which is obtained by *train_test_split* function)
 
