@@ -97,9 +97,9 @@ And we have found 1st interesting fact: Children category (Number of children co
 We could determine within each categorical variable what is the number of impressions for each specific category, as we did with the "region". But how to present all these categories in the way to be suitable for processing together with our numerical variables? One hot encoding is the answer.
 
 One hot encoding is the procedure of transforming categorical variables as binary vectors. How does it works? Let's back to the "region" category. Each individual must be part of one of the four regions:
-$$[southeast, southwest, northwest, northeast]&&
+$$[southeast, southwest, northwest, northeast]$$
 One hot encoding will transform affiliation to a specific region to the vector of four elements, for example:
-$$[0,0,1,0]$$ 
+$$[0,0,1,0]$$
 Third element is 1, so this individual is from the northwest. After that, next person region information is transformed to:
 $$[1,0,0,0]$$ - of course, this is someone from the southeast. Simple as a cake!
 
