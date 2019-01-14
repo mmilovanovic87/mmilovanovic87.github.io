@@ -99,8 +99,11 @@ We could determine within each categorical variable what is the number of impres
 One hot encoding is the procedure of transforming categorical variables as binary vectors. How does it works? Let's back to the "region" category. Each individual must be part of one of the four regions:
 $$[southeast, southwest, northwest, northeast]$$
 One hot encoding will transform affiliation to a specific region to the vector of four elements, for example:
+
 $$[0,0,1,0]$$
+
 Third element is 1, so this individual is from the northwest. After that, next person region information is transformed to:
+
 $$[1,0,0,0]$$ - of course, this is someone from the southeast. Simple as a cake!
 
 What next? To transform categorical variables sex, smoker and region by using One hot encoding, and add obtained categories to our dataframe.
