@@ -57,14 +57,6 @@ The task will be to perform all the necessary steps which are required for succe
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfDescribe.png" alt="Basic information about all columns">
 
-+ As it is said, three object categories are included. They are all categorical features, and the easiest way to analyze these data is to count a number of impressions of each possible outcome. For example, region category could be summed up as:
-
-```python
-    df['region'].value_counts()
-```
-<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfRegion.png" alt="Count a number of values for each region">
-
-
 * Next part is to graphically represent our numerical data. We will plot pairplot graph from the seaborn library.
 
 ```python
@@ -83,7 +75,7 @@ Pairplot is the easiest way to see all mutual correlations between different cat
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/distplot.png" alt="Distribution of charges column">
 
-From the figure above we can conclude that the distribution of "charges" is close enough to normal distribution of data. It is a good thing!
+From the figure above we can conclude that the variable "charges" do not possess normal distribution of data, but it has a mixture distribution. That could be a problem for getting optimal performances of our model, and we will see in the next announcement how we can easily deal with this problem.
 
 * Next figure is a heatmap. It represents mutual correlation of numerical categories from our dataset.
 
@@ -95,40 +87,58 @@ From the figure above we can conclude that the distribution of "charges" is clos
 
 And we have found 1st interesting fact: Children category (Number of children covered by health insurance) has the lowest correlation with "charges". Personally, I thought it would be vice versa.
 
-* We have three non numerical categories: sex, smoker and region. We want to use them too for the prediction purposes. So the next step is to convert these variables to numerical dummy variables (label values), by which, each string inside a category will be presented with one label (integer).
++ As it is said, three object categories are included. What could be done to analyze that kind of data? For example, "region" category could be summed up as:
 
 ```python
-    from sklearn.preprocessing import LabelEncoder
+    df['region'].value_counts()
+```
+<img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfRegion.png" alt="Count a number of values for each region">
 
-    lb_sex = LabelEncoder()
-    df["sex_label"] = lb_sex.fit_transform(df["sex"])
+We could determine within each categorical variable what is the number of impressions for each specific category, as we did with the "region". But how to present all these categories in the way to be suitable for processing together with our numerical variables? One hot encoding is the answer.
 
-    lb_smoker = LabelEncoder()
-    df["smoker_label"] = lb_sex.fit_transform(df["smoker"])
+One hot encoding is the procedure of transforming categorical variables as binary vectors. How does it works? Let's back to the "region" category. Each individual must be part of one of the four regions: [southeast, southwest, northwest, northeast]. One hot encoding will transform affiliation to a specific region to the vector of four elements, for example: [0,0,1,0]. Third element is 1, so this individual is from northwest. After that, next person region information is transformed to: [1,0,0,0] - of course, this is someone from southeast. Simple as a cake!
 
-    lb_region = LabelEncoder()
-    df["region_label"] = lb_sex.fit_transform(df["region"])
+What next? To transform categorical variables sex, smoker and region by using One hot encoding, and add obtained categories to our dataframe.
+
+```python
+
+      sex_dummy = pd.get_dummies(df['sex'])
+      smoker_dummy = pd.get_dummies(df['smoker'])
+      region_dummy = pd.get_dummies(df['region'])
+
+      df = pd.concat([df,sex_dummy,smoker_dummy,region_dummy], axis=1)
+
+      df.rename(columns={'no': 'non-smoker', 'yes': 'nicotian'}, inplace=True)
+
 ```
 
-* In the table below we can recognize three new columns (which represent converted object categories)
+* We have successfully transformed our categorical variables, so we can remove these original categories from our DataFrame.
+
+```python
+    df = df.drop(['sex','smoker','region'], axis=1)
+```
+
+In the table below we can recognize our new (One hot encoding) columns (which represent converted object categories)
 
 ```python
     df.head(10)
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/dfHead2.png" alt="Head of data">
 
-Now we can use all 7 categories for prediction purposes.
+Now we can use all 7 initial categories for prediction purposes.
 
 * We have prepared our data for processing and fitting a new model. Next part is to use function *train_test_split* to divide all information in the two subsets: training and testing.
 
 ```python
     from sklearn.model_selection import train_test_split
 ```
-+ Six data-frame categories will be used as inputs of the model. We want to fit our model according to the "charges" category, so output variable Y will be "charges" of course.
++ Eleven data-frame categories will be used as inputs of the model. We want to fit our model according to the "charges" category, so output variable Y will be "charges" of course.
 
 ```python
-    X = df[['age', 'sex_label', 'bmi', 'children',
-     'smoker_label', 'region_label']]
+    X = df[['age', 'bmi', 'children',
+    'female','male','non smoker',
+    'nicotian','northeast','northwest',
+    'southeast','southwest',]]
 
     y = df['charges']
 ```
@@ -179,7 +189,7 @@ Now we can use all 7 categories for prediction purposes.
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/scatter.png" alt="Scatter graph">
 
-+ Also, let's see an error distribution graph of our predictions. Very close to normal distribution of data, for sure.
++ Also, let's see an error distribution graph of our predictions.
 
 ```python
     sns.distplot((y_test-predictions), bins=50)
@@ -197,4 +207,6 @@ Now we can use all 7 categories for prediction purposes.
 <img src="{{ site.url }}{{ site.baseurl }}/images/LinearRegression/metrics.png" alt="Metrics">
 
 
-That's it for the beginning. The model is not perfect. There are definitely better machine learning models which could be used for achieving better prediction performances, but the point in this text was to present how to predict using Linear Regression. And we did it. :)
+That's it for the beginning. As we can see from calculated errors, our model is far from perfect. There are definitely better machine learning models which could be used for achieving better prediction performances, but the point in this text was to present how to predict using Linear Regression.
+
+So, is there any way to improve obtained performances and to keep the proposed model? Yes, there is a way. We will see in the next announcement how one simple transformation of "charges" category could dramatically increase performances of our model.
