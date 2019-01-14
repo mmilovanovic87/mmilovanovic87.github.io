@@ -1,6 +1,6 @@
 ---
 title: "Medical Costs Analysis using a Linear Regression model"
-date: 2019-01-06
+date: 2019-01-14
 tags: [machine learning, data science, linear regression, python]
 excerpt: "Machine Learning, Linear Regression, Data Science"
 mathjax: "true"
