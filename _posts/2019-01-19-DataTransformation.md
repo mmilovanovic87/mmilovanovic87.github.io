@@ -32,7 +32,7 @@ In general, data transformation is used to change the shape of the data distribu
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/2 Data Normalization/ProbabilityPlot.png" alt="ProbabilityPlot">
 
-*stats.probplot* line of the code is used to "generate a probability plot of sample data against the quantiles of a specified theoretical distribution (the normal distribution by default)". What does it mean in practice? If the points fall closely along the straight line, we can conclude that our analyzed variable posses normal distribution. From the probability figure above we can say that "charhes" is far from that.
+*stats.probplot* line of the code is used to "generate a probability plot of sample data against the quantiles of a specified theoretical distribution (the normal distribution by default)". What does it mean in practice? If the points fall closely along the straight line, we can conclude that our analyzed variable posses normal distribution. From the probability figure above we can say that "charges" is far from that.
 
 * How to improve our main variable? There are plenty of ways to treat your raw data, but at the beginning, we will start with the easiest solution: **LOG TRANSFORMATION**.
 
