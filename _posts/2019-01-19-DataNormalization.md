@@ -59,7 +59,8 @@ Ok. We have transformed our category of interest. Is it going to be helpful for 
 
 ```python
     print(lm.intercept_)
-    coeff_df = pd.DataFrame(lm.coef_,X.columns,columns=['Coefficient'])
+    coeff_df = pd.DataFrame(lm.coef_,X.columns,
+    columns=['Coefficient'])
     print(coeff_df)
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/2 Data Normalization/LRcoeff.png" alt="LR coeff">
