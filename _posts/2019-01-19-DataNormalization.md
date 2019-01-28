@@ -1,5 +1,5 @@
 ---
-title: "Does Data Transformation really matter?"
+title: "Does Data Transformation Really Matter?"
 date: 2019-01-27
 tags: [data transformation, data normalization, log transformation, linear regression, python]
 excerpt: "Data Transformation, Linear Regression, Data Normalization, Log transformation"
