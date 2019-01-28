@@ -37,6 +37,7 @@ In general, data transformation is used to change the shape of the data distribu
 * How to improve our main variable? There are plenty of ways to treat your raw data, but at the beginning, we will start with the easiest solution: **LOG TRANSFORMATION**.
 
 This mathematical function calculates the natural logarithm of x where x belongs to all the input array elements. The natural logarithm (log) is the inverse of the exp(), so that:
+
  $$ log(exp(x)) = x $$.
 
  It make sense to use the log transformation on your data, if the data are always positive and their scales varies drastically.
