@@ -6,6 +6,7 @@ excerpt: "Pandas, Data Analysis, DataFrame, Football, Premier League"
 mathjax: "true"
 
 ---
+<img src="{{ site.url }}{{ site.baseurl }}/images/3 PremierLeague/PL.png" alt="PL logo">
 
 In this chapter, some elemental PANDAS data analysis will be performed, when we are facing ".csv" files in front of us. Dataset of interest contains results from every Premier League match from 1993-1994 to 2017-2018. Columns include Division (denoted as E0), HomeTeam, AwayTeam, FTHG (final time home goals), FTAG (final time away goals), FTR (full time result), HTHG (half time home goals), HTAG (half time away goals), HTR (half time result), and season. The dataset could be obtained from [Premier League dataset](https://www.kaggle.com/thefc17/epl-results-19932018).
 
