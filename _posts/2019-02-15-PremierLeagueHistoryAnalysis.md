@@ -8,7 +8,9 @@ mathjax: "true"
 ---
 <img src="{{ site.url }}{{ site.baseurl }}/images/3 PremierLeague/PL.png" alt="PL logo">
 
-In this chapter, some elemental PANDAS data analysis will be performed, when we are facing ".csv" files in front of us. Dataset of interest contains results from every Premier League match from 1993-1994 to 2017-2018. Columns include Division (denoted as E0), HomeTeam, AwayTeam, FTHG (final time home goals), FTAG (final time away goals), FTR (full time result), HTHG (half time home goals), HTAG (half time away goals), HTR (half time result), and season. The dataset could be obtained from [Premier League dataset](https://www.kaggle.com/thefc17/epl-results-19932018).
+In this chapter, some elemental PANDAS data analysis will be performed, when we are facing ".csv" files in front of us. Dataset of interest contains results from every Premier League match from 1993-1994 to 2017-2018. Columns include Division (denoted as E0), HomeTeam, AwayTeam, FTHG (final time home goals), FTAG (final time away goals), FTR (full time result), HTHG (half time home goals), HTAG (half time away goals), HTR (half time result), and season. The dataset could be obtained from [Premier League dataset](https://www.kaggle.com/thefc17/epl-results-19932018). Next figure presents last 20 rows of the initial DataFrame.
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/3 PremierLeague/InitialDF.png" alt="All PL clubs">
 
 The main task in this short chapter will be to announce the Quarter Century Champion of the PL, based on all results recorded in the table. To complete that task, we must do some basic DataFrame transformations.
 
@@ -23,7 +25,7 @@ The main task in this short chapter will be to announce the Quarter Century Cham
 * Let's see the names of all clubs which played in the PL from 1993 to 2018:
 
 ```python
-    clubs = data['HomeTeam'].unique()
+    clubs = data['HomeTeam'].nunique()
     clubs
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/3 PremierLeague/Clubs.png" alt="All PL clubs">
@@ -176,7 +178,7 @@ New DataFrame is completed. We have a good insight from it about performances of
 ```
 <img src="{{ site.url }}{{ site.baseurl }}/images/3 PremierLeague/FinalTable.png" alt="Final Table">
 
-**And we have a champion!!!! Manchester United!!!**
+**And we have a champion!!! Manchester United!!!**
 
 **Interesting fact... In the period 1993 - 2018, Man United have won 2018 league points.**
 
