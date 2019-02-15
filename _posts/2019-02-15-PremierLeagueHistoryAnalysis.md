@@ -14,7 +14,7 @@ In this chapter, some elemental PANDAS data analysis will be performed, when we 
 
 The main task in this short chapter will be to announce the Quarter Century Champion of the PL, based on all results recorded in the table. To complete that task, we must do some basic DataFrame transformations.
 
-* For the beginning, we will import two required python libraries and read original csv file and write it into a variable.
+* For the beginning, we will import two required python libraries, read original csv file and write it into a variable.
 
 ```python
     import numpy as np
